@@ -1,0 +1,14 @@
+digraph ComputationGraph {
+  rankdir=LR;
+  node [shape=record, style=filled, fontname="Helvetica"];
+  node0 [label="{ <id> ID: 0 | <op> Op: Input | <val> Val: 2 | <grad> Grad: 2.58385 }", fillcolor="#d4edda"];
+  node1 [label="{ <id> ID: 1 | <op> Op: Input | <val> Val: 3 | <grad> Grad: 2 }", fillcolor="#d4edda"];
+  node2 [label="{ <id> ID: 2 | <op> Op: Multiply (*) | <val> Val: 6 | <grad> Grad: 1 }", fillcolor="#cce5ff"];
+  node0 -> node2 [label=" ∂=3", fontname="Helvetica", fontsize=10];
+  node1 -> node2 [label=" ∂=2", fontname="Helvetica", fontsize=10];
+  node3 [label="{ <id> ID: 3 | <op> Op: Sin | <val> Val: 0.909297 | <grad> Grad: 1 }", fillcolor="#cce5ff"];
+  node0 -> node3 [label=" ∂=-0.416147", fontname="Helvetica", fontsize=10];
+  node4 [label="{ <id> ID: 4 | <op> Op: Add (+) | <val> Val: 6.9093 | <grad> Grad: 1 }", fillcolor="#f8d7da"];
+  node2 -> node4 [label=" ∂=1", fontname="Helvetica", fontsize=10];
+  node3 -> node4 [label=" ∂=1", fontname="Helvetica", fontsize=10];
+}
